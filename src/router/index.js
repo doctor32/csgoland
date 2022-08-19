@@ -1,25 +1,50 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import vHome from '../views/v-home.vue'
+import privacyPolicy from '../views/privacy-policy.vue'
+import termsOfUse from '../views/terms-of-use.vue'
+import errorCountry from '../views/error-country.vue'
+import errorMobile from '../views/error_mobile.vue'
+import errorControl from '../views/error_control.vue'
 
-const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: HomeView
-  },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
-]
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes
+  scrollBehavior() {
+    return { x: 0, y: 0 }
+  },
+  history: createWebHistory(),
+  routes: [
+        {
+          path: '/',
+          name: 'home',
+          component: vHome,
+          meta: { title: 'asf' }
+        },
+        {
+          path: '/privacy',
+          name: 'privacy',
+          component: privacyPolicy
+        },
+        {
+          path: '/terms',
+          name: 'terms',
+          component: termsOfUse
+        },
+        {
+          path: '/not_avaliable',
+          name: 'errorCountry',
+          component: errorCountry
+        },
+        {
+          path: '/guard',
+          name: 'errorMobile',
+          component: errorMobile
+        },
+        {
+          path: '/control',
+          name: 'errorControl',
+          component: errorControl
+        }
+  ]
 })
 
 export default router

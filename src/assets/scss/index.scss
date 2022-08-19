@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'reset.scss';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body, html {
+    font-size: .52vw;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+body {
+    background: linear-gradient(180deg, #1F1F1F 0%, #272727 50.53%, #1F1F1F 100%);
+}
+.container {
+    width: 132rem;
+    margin: 0 auto;
+    font-size: 1.6rem;
+}
+.title {
+    font-weight: 700;
+    font-size: 4.6rem;
+    line-height: 5.5rem;
+    color: white;
+}
+.login__btn{
+    z-index: 2;
+    background: #1478ED;
+    padding: 1.5rem 3rem;
+    font-size: 1.8rem;
+    border-radius: 1.5rem;
+    transition: .3s;
+    &:hover {
+      background: #0f5aaf;
+    }
+}
